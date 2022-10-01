@@ -10,3 +10,4 @@
 /resources/public/js
 /resources/public/css/*.css
 /.shadow-cljs
+/.lsp

@@ -19,6 +19,8 @@
     "css-build": "node-sass --output-style compressed --omit-source-map-url src/sass/main.scss resources/public/css/main.css",
     "css-watch": "npm run css-build -- --watch",
     "js-build": "npx shadow-cljs release app",
-    "build": "npm run js-build; npm run css-build"
+    "build": "npm run js-build; npm run css-build",
+    "start-seed": "clojure -m mercurius.main seed",
+    "start" : "clojure -m mercurius.main"
   }
 }
