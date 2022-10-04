@@ -87,3 +87,9 @@ After a while, you should be able to access http://localhost:5000 and log in wit
 ## Contributing
 
 I'm by no means an expert in any of the principles or technologies used in this project, so feel free to share your thoughts, submit bug reports, pull requests, etc.
+
+## todo
+forgot password page
+database
+improve trading
+
