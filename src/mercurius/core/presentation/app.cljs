@@ -3,6 +3,7 @@
             [mercurius.core.presentation.flux]
             [mercurius.core.presentation.views.components :refer [page-loader]]
             [mercurius.accounts.presentation.login.page :refer [login-page]]
+            [mercurius.accounts.presentation.forgot_password.page :refer [forgot-password-page]]
             [mercurius.trading.presentation.page :refer [trading-page]]))
 
 (defn- navbar []
@@ -15,7 +16,9 @@
       [:a.button.is-black
        {:on-click #(>evt [:logout])}
        [:span.icon [:i.fas.fa-sign-out-alt]]
-       [:span "Logout"]]]]]])
+       [:span "Logout"]]]
+     [:div.navbar-item
+      ]]]])
 
 (defn app []
   (if (<sub [:core/initialized?])
@@ -23,5 +26,7 @@
       [:<>
        [navbar]
        [trading-page]]
-      [login-page])
+      (if (true? (<sub [:forgot-password?]))
+        [forgot-password-page]
+        [login-page]))
     [page-loader]))

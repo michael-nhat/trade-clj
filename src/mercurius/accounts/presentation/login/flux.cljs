@@ -19,7 +19,13 @@
 
 (reg-sub :login-form :login-form)
 
+
 ;;;; Events
+
+(reg-event-db
+ :forgot-password
+ (fn [db [_ forgot-password?]]
+   (assoc db :forgot-password forgot-password?)))
 
 (reg-event-db
  :login-form-changed
@@ -39,6 +45,11 @@
                  :timeout 5000
                  :format (edn/edn-request-format)
                  :response-format (edn/edn-response-format)}}))
+
+;; (reg-event-fx
+;;  :forgot-password
+;;  (fn [{:keys [db]} [_]]
+;;    {:db (assoc db :forgot-password false)}))
 
 (reg-event-fx
  :login-success
